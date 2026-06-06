@@ -6,7 +6,7 @@ Aplicación móvil desarrollada con **React Native** y **Expo Go** que muestra i
 
 | Splash Screen | Home Screen |
 |---------------|--------------|
-| ![Splash Screen](./screenshots/splash.jpg) | ![Home Screen](./screenshots/home.jpg) |
+| ![Splash Screen](./images/splash.jpg) | ![Home Screen](./images/home.jpg) |
 
 > *Nota: Las imágenes de muestra están en la carpeta `/screenshots`*
 
