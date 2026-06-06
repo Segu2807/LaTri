@@ -2,16 +2,6 @@
 
 Aplicación móvil desarrollada con **React Native** y **Expo Go** que muestra información de la Selección Ecuatoriana de Fútbol "La TRI". Incluye una pantalla de bienvenida (Splash Screen) y una pantalla principal (Home Screen) con datos relevantes del equipo.
 
-## 📱 Capturas de pantalla
-
-| Splash Screen | Home Screen |
-|---------------|--------------|
-| ![Splash Screen](./images/splash.jpg) | ![Home Screen](./images/home.jpg) |
-
-> *Nota: Las imágenes de muestra están en la carpeta `/screenshots`*
-
----
-
 ## 📋 Requisitos del proyecto
 
 | Requisito | Estado |
