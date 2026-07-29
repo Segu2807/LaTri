@@ -1,4 +1,4 @@
-# 🇪🇨 Selección Ecuatoriana de Fútbol - App Móvil (Examen)
+# Selección Campeona de Fútbol - App Móvil (Examen)
 
 Aplicación móvil desarrollada con **React Native** y **Expo Go** para el examen de Dispositivos Móviles. La app incluye una pantalla de bienvenida (Splash Screen) con temporizador y carga, una barra de navegación inferior con 3 pestañas funcionales, y contenido multimedia.
 
@@ -29,36 +29,36 @@ Aplicación móvil desarrollada con **React Native** y **Expo Go** para el exame
 
 ## Estructura del proyecto
 
-
+```text
 SeleccionEcuadorApp/
 │
-├── App.js # Configuración de Stack y Bottom Tabs
-├── app.json # Configuración de Expo
-├── package.json # Dependencias
-├── README.md # Este archivo
+├── App.js                    # Configuración de Stack y Bottom Tabs
+├── app.json                  # Configuración de Expo
+├── package.json              # Dependencias del proyecto
+├── README.md                 # Documentación del proyecto
 │
 ├── assets/
-│ ├── images/ # Imágenes locales (logo, banderas, etc.)
-│ └── videos/ # Videos cortos para la pantalla About
-│ ├── estudiante1.mp4
-│ └── estudiante2.mp4
+│   ├── images/               # Imágenes locales (logo, banderas, etc.)
+│   └── videos/               # Videos para la pantalla About
+│       ├── estudiante1.mp4
+│       └── estudiante2.mp4
 │
 └── src/
-├── components/
-│ └── PlayerCard.js # Componente reutilizable de jugador (Props)
-│
-├── data/
-│ └── playersData.js # Datos de los jugadores de la selección
-│
-├── screens/
-│ ├── SplashScreen.js # Pantalla de bienvenida con ActivityIndicator
-│ ├── HomeScreen.js # Pestaña 1 (Bienvenida + Subcampeón Argentina)
-│ ├── SpainScreen.js # Pestaña 2 (Información de España)
-│ └── AboutScreen.js # Pestaña 3 (Videos y descripción estudiantes)
-│
-└── styles/
-└── globalStyles.js # Estilos reutilizables (Textos, colores)
-
+    ├── components/
+    │   └── PlayerCard.js     # Componente reutilizable de jugador
+    │
+    ├── data/
+    │   └── playersData.js    # Datos de los jugadores de la selección
+    │
+    ├── screens/
+    │   ├── SplashScreen.js   # Pantalla de bienvenida con ActivityIndicator
+    │   ├── HomeScreen.js     # Pestaña 1 (Bienvenida + Subcampeón Argentina)
+    │   ├── SpainScreen.js    # Pestaña 2 (Información de España)
+    │   └── AboutScreen.js    # Pestaña 3 (Videos y descripción de estudiantes)
+    │
+    └── styles/
+        └── globalStyles.js   # Estilos reutilizables (textos y colores)
+```
 
 ---
 
