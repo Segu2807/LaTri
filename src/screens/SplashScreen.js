@@ -1,17 +1,22 @@
+// src/screens/SplashScreen.js
 import React from 'react';
-import { View, Image, Text, StyleSheet } from 'react-native';
+import { View, Image, Text, StyleSheet, ActivityIndicator } from 'react-native';
 
 export default function SplashScreen() {
   return (
     <View style={styles.container}>
-      {/* Logo oficial de la Selección Ecuatoriana (vía URL) */}
+      {/* Logo (Asegúrate de que la imagen 'España.png' esté en tus assets) */}
       <Image
-        source={{ uri: 'https://www.pinterest.com/pin/554365035398727139/' }}
+        source={require('../../assets/images/España.png')}
         style={styles.logo}
         resizeMode="contain"
       />
-      {/* Texto solicitado: "Ecuador - La Tri" */}
-      <Text style={styles.title}>Ecuador - La Tri</Text>
+      <Text style={styles.title}>Bienvenido</Text>
+      <Text style={styles.subtitle}>Torneo de Selecciones 2026</Text>
+      
+      {/* Indicador de carga */}
+      <ActivityIndicator size="large" color="#FFCC00" style={styles.loader} />
+      <Text style={styles.loadingText}>Cargando aplicación...</Text>
     </View>
   );
 }
@@ -19,7 +24,7 @@ export default function SplashScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFCC00', // Amarillo de Ecuador
+    backgroundColor: '#003DA5', // Azul oscuro de Ecuador
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -29,9 +34,22 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   title: {
-    fontSize: 28,
+    fontSize: 32,
     fontWeight: 'bold',
-    color: '#003DA5', // Azul de Ecuador
+    color: '#ffffff',
     marginTop: 10,
+  },
+  subtitle: {
+    fontSize: 18,
+    color: '#ffffff',
+    marginTop: 5,
+  },
+  loader: {
+    marginTop: 40,
+  },
+  loadingText: {
+    color: '#ffffff',
+    marginTop: 10,
+    fontSize: 14,
   },
 });

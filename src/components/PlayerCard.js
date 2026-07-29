@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { textStyles } from '../styles/globalStyles';
 
 export default function PlayerCard({ player }) {
   return (
@@ -9,6 +10,8 @@ export default function PlayerCard({ player }) {
       </View>
       <Text style={styles.playerName}>{player.name}</Text>
       <Text style={styles.playerPosition}>{player.position}</Text>
+      <Text style={styles.playerClub}>{player.club}</Text>
+      <Text style={styles.playerAge}>Edad: {player.age}</Text>
     </View>
   );
 }
@@ -19,7 +22,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     padding: 15,
     marginRight: 15,
-    width: 120,
+    width: 140,
     alignItems: 'center',
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
@@ -28,28 +31,44 @@ const styles = StyleSheet.create({
     elevation: 3,
   },
   numberContainer: {
-    backgroundColor: '#2f00ff',
+    backgroundColor: '#003DA5',
     width: 40,
     height: 40,
     borderRadius: 20,
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 10,
+    marginBottom: 8,
   },
   number: {
-    color: '#fff',
+    color: '#FFCC00',
     fontWeight: 'bold',
     fontSize: 18,
   },
   playerName: {
     fontWeight: 'bold',
     fontSize: 14,
+    color: '#070707',
+    ...textStyles.body,
     textAlign: 'center',
-    marginBottom: 5,
+    marginBottom: 2,
   },
   playerPosition: {
     fontSize: 12,
     color: '#666',
+    ...textStyles.small,
+    textAlign: 'center',
+    marginBottom: 2,
+  },
+  playerClub: {
+    fontSize: 11,
+    color: '#003DA5',
+    textAlign: 'center',
+    fontWeight: '600',
+    marginBottom: 2,
+  },
+  playerAge: {
+    fontSize: 11,
+    color: '#888',
     textAlign: 'center',
   },
 });
