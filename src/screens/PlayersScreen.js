@@ -41,10 +41,10 @@ export default function PlayersScreen({ navigation }) {
       </View>
 
       <ScrollView style={styles.scrollView}>
-        {renderPlayerSection('🧤 Porteros', playersData.goalkeepers)}
-        {renderPlayerSection('🛡️ Defensores', playersData.defenders)}
-        {renderPlayerSection('⚡ Mediocampistas', playersData.midfielders)}
-        {renderPlayerSection('⚽ Delanteros', playersData.forwards)}
+        {renderPlayerSection('Porteros', playersData.goalkeepers)}
+        {renderPlayerSection('Defensores', playersData.defenders)}
+        {renderPlayerSection('Mediocampistas', playersData.midfielders)}
+        {renderPlayerSection('Delanteros', playersData.forwards)}
         <View style={styles.footer} />
       </ScrollView>
     </SafeAreaView>

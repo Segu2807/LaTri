@@ -1,66 +1,74 @@
-# 🇪🇨 Selección Ecuatoriana de Fútbol - App Móvil
+# 🇪🇨 Selección Ecuatoriana de Fútbol - App Móvil (Examen)
 
-Aplicación móvil desarrollada con **React Native** y **Expo Go** que muestra información de la Selección Ecuatoriana de Fútbol "La TRI". Incluye una pantalla de bienvenida (Splash Screen) y una pantalla principal (Home Screen) con datos relevantes del equipo.
+Aplicación móvil desarrollada con **React Native** y **Expo Go** para el examen de Dispositivos Móviles. La app incluye una pantalla de bienvenida (Splash Screen) con temporizador y carga, una barra de navegación inferior con 3 pestañas funcionales, y contenido multimedia.
 
-## 📋 Requisitos del proyecto
+## Requisitos del proyecto (Rúbrica del examen)
 
-| Requisito | Estado |
-|-----------|--------|
-| Splash Screen con logo centrado | ✅ |
-| Fondo con colores de Ecuador (Amarillo #FFCC00) | ✅ |
-| Texto "Ecuador - La Tri" debajo del logo | ✅ |
-| Duración de 2 a 3 segundos antes de navegar | ✅ |
-| Home Screen con título del equipo | ✅ |
-| Imagen del escudo/logo de la selección | ✅ |
-| Al menos 3 datos del equipo | ✅ |
-| Botón interactivo con mensaje | ✅ |
-| Estilo visual con colores de La Tri | ✅ |
+| # | Criterio | Estado |
+|---|----------|--------|
+| 1 | Splash Screen con indicador de carga, logo y paso automático al Home | ✅ |
+| 2 | Barra inferior (Bottom Navigation Bar) con 3 pestañas funcionales | ✅ |
+| 3 | Pestaña Home: Bienvenida y tarjeta del subcampeón Argentina | ✅ |
+| 4 | Pestaña España: Bandera, himno, equipación y jugadores estrella | ✅ |
+| 5 | Pestaña Acerca de: Foto (video) y descripción de cada estudiante | ✅ |
+| 6 | Reutilización de componentes, props y organización del código | ✅ |
+| 7 | Repositorio en GitHub con commits del día y README actualizado | ✅ |
 
 ---
 
-## 🛠️ Tecnologías utilizadas
+## Tecnologías utilizadas
 
 - **React Native** - Framework para desarrollo móvil
 - **Expo Go** - Plataforma para desarrollo y pruebas
+- **React Navigation (Stack & Bottom Tabs)** - Navegación entre pantallas y pestañas
+- **Expo AV** - Reproducción de videos en la pantalla Acerca de
 - **React Hooks** - Manejo de estado (useState, useEffect)
-- **React Native Components** - View, Text, Image, ScrollView, TouchableOpacity, Alert
+- **Componentes React Native** - View, Text, Image, ScrollView, ActivityIndicator, Video
 
 ---
 
-## 📁 Estructura del proyecto
+## Estructura del proyecto
+
 
 SeleccionEcuadorApp/
 │
-├── App.js # Componente principal (controla navegación)
+├── App.js # Configuración de Stack y Bottom Tabs
 ├── app.json # Configuración de Expo
-├── package.json # Dependencias del proyecto
+├── package.json # Dependencias
 ├── README.md # Este archivo
 │
-├── src/
-│ ├── screens/
-│ │ ├── SplashScreen.js # Pantalla de bienvenida
-│ │ └── HomeScreen.js # Pantalla principal
-│ │
-│ └── components/
-│ └── (opcional) # Componentes reutilizables
-│
 ├── assets/
-│ └── images/ # Imágenes locales (opcional)
+│ ├── images/ # Imágenes locales (logo, banderas, etc.)
+│ └── videos/ # Videos cortos para la pantalla About
+│ ├── estudiante1.mp4
+│ └── estudiante2.mp4
 │
-└── screenshots/ # Capturas para el README
-├── splash.jpg
-└── home.jpg
+└── src/
+├── components/
+│ └── PlayerCard.js # Componente reutilizable de jugador (Props)
+│
+├── data/
+│ └── playersData.js # Datos de los jugadores de la selección
+│
+├── screens/
+│ ├── SplashScreen.js # Pantalla de bienvenida con ActivityIndicator
+│ ├── HomeScreen.js # Pestaña 1 (Bienvenida + Subcampeón Argentina)
+│ ├── SpainScreen.js # Pestaña 2 (Información de España)
+│ └── AboutScreen.js # Pestaña 3 (Videos y descripción estudiantes)
+│
+└── styles/
+└── globalStyles.js # Estilos reutilizables (Textos, colores)
 
 
 ---
 
-## 🚀 Instalación y ejecución
+## Instalación y ejecución
 
 ### Requisitos previos
 
 - **Node.js** (versión 18 o superior) → [Descargar](https://nodejs.org/)
 - **Expo Go** en tu teléfono móvil → [iOS](https://apps.apple.com/app/expo-go/id982107779) | [Android](https://play.google.com/store/apps/details?id=host.exp.exponent)
-- **Git** (opcional, para clonar el repositorio) → [Descargar](https://git-scm.com/)
+- **Git** (opcional) → [Descargar](https://git-scm.com/)
 
 ### Paso 1: Clonar o descargar el repositorio
 
@@ -70,141 +78,102 @@ git clone https://github.com/Segu2807/LaTri.git
 
 # Entrar a la carpeta del proyecto
 cd SeleccionEcuadorApp
+
 Paso 2: Instalar dependencias
 bash
 npm install
-O si usas yarn:
+Nota: Este proyecto utiliza @react-navigation/bottom-tabs y expo-av. Si tienes errores, ejecuta:
 
 bash
-yarn install
+npx expo install @react-navigation/bottom-tabs @react-navigation/native-stack react-native-screens react-native-safe-area-context expo-av
 Paso 3: Iniciar el servidor de desarrollo
 bash
 npx expo start --clear --tunnel
-Explicación de flags:
+--clear → Limpia la caché.
 
---clear → Limpia la caché de Metro
-
---tunnel → Crea un túnel ngrok (recomendado para iPhone)
+--tunnel → Crea un túnel (recomendado para iPhone).
 
 Paso 4: Ejecutar en dispositivo
 Opción A: En iPhone (Expo Go)
-Descarga Expo Go desde la App Store
 
-Abre la app Expo Go
+Descarga Expo Go desde la App Store.
 
-Escanea el código QR que aparece en la terminal
+Abre la app y escanea el código QR que aparece en la terminal.
 
-Importante: Si aparece error de conexión, ve a:
-
-Configuración → Expo Go → Activar "Red Local" (Local Network)
-
-Espera a que cargue la aplicación
+Nota: Si falla, ve a Configuración → Expo Go → Activar "Red Local".
 
 Opción B: En Android (Expo Go)
-Descarga Expo Go desde Google Play
 
-Abre la app Expo Go
+Descarga Expo Go desde Google Play.
 
-Escanea el código QR que aparece en la terminal
+Abre la app y escanea el código QR.
 
-🎮 Cómo usar la aplicación
-Splash Screen (Pantalla de bienvenida)
-Se muestra durante 2.5 segundos
+🎮 Funcionalidades de la App (Por pestañas)
+1. Splash Screen (Pantalla de bienvenida)
+Se muestra durante 3 segundos.
 
-Fondo amarillo (#FFCC00)
+Fondo azul oscuro (#003DA5) con logo de la selección.
 
-Logo de la selección ecuatoriana centrado
+Incluye un indicador de carga (ActivityIndicator) para simular la inicialización.
 
-Texto: "Ecuador - La Tri"
+Paso automático a la barra de pestañas principal.
 
-Home Screen (Pantalla principal)
-Una vez que pasa el Splash Screen, verás:
+2. Bottom Navigation Bar (Barra Inferior)
+Diseñada con los colores oficiales de Ecuador (#003DA5 y #FFCC00).
 
-Encabezado con el nombre "Selección Ecuatoriana de Fútbol"
+3 pestañas funcionales: Home, España y Acerca de.
 
-Logo/escudo de la selección
+3. Pestaña Home (Inicio)
+Mensaje de bienvenida personalizado para el estudiante.
 
-Información del equipo:
+Tarjeta del Subcampeón: Información de Argentina como subcampeón de la Copa América 2024 (bandera, nombre y resultado de la final).
 
-Confederación: CONMEBOL
+4. Pestaña España
+Información completa del país y su selección:
 
-Entrenador actual: Sebastián Beccacece
+Bandera de España.
 
-Estadio principal: Estadio Rodrigo Paz Delgado (Quito)
+Himno Nacional (Marcha Real).
 
-Copa América: 4° lugar (1993, 2015, 2019)
+Equipación oficial (Local y Visitante).
 
-Participaciones mundialistas: 4 (2002, 2006, 2014, 2022 y 2026)
+Jugadores estrella (Pedri, Lamine Yamal, Rodri).
 
-Botón interactivo "🇪🇨 ¡Apoyar a La Tri! 🇪🇨"
+5. Pestaña Acerca de
+Información de los desarrolladores del proyecto.
 
-Al presionarlo, muestra un mensaje de alerta
+Cada estudiante tiene un video corto en bucle (formato circular) y su descripción.
 
-🎨 Colores oficiales de la aplicación
+Uso del componente <Video> de expo-av con propiedades shouldPlay y isLooping.
+
+Colores oficiales de la aplicación
 Color	Código HEX	Uso
-Amarillo Ecuador	#FFCC00	Fondo del Splash Screen, encabezado del Home
-Azul Ecuador	#003DA5	Textos, bordes, botón principal
-Fondo claro	#FFF9E6	Fondo del Home Screen
+Amarillo Ecuador	#FFCC00	Textos del Splash, Tarjetas de Home
+Azul Ecuador	#003DA5	Fondo del Splash, Barra de Navegación, Títulos
+Fondo claro	#FFF9E6 / #F0F4F8	Fondos de las pantallas principales
 
+Ejecuta en la terminal: npx expo install expo-av
 
-🔧 Solución de problemas comunes
-❌ Error: "The request timed out" en Expo Go
-Solución:
+El Splash Screen no aparece
 
-En iPhone: Configuración → Expo Go → Activar "Red Local"
-
-En terminal: Usar npx expo start --tunnel
-
-Asegurar que PC y teléfono estén en la misma red WiFi
-
-❌ Error: "Unable to resolve module"
-Solución:
-
-bash
-# Limpiar caché completamente
-npx expo start --clear
-❌ Los cambios no se reflejan en la app
-Solución:
-
-En Expo Go: Sacude el teléfono → Reload
-
-O presiona la tecla r en la terminal
-
-O cierra y vuelve a abrir Expo Go
-
-❌ El Splash Screen no aparece (muestra Home directamente)
-Solución:
-Este problema ocurre por caché. Sigue estos pasos:
-
-Detén el servidor (Ctrl+C)
-
-Borra caché manual:
-
-bash
-rmdir /s /q .expo
-Reinicia con:
+Detén el servidor (Ctrl+C), elimina la carpeta .expo y reinicia con:
 
 bash
 npx expo start --clear --tunnel
-En iPhone: Cierra Expo Go y vuelve a escanear
-
-📤 Entregables académicos
-1. Repositorio en GitHub
+Entregables académicos (Criterios del examen)
+Repositorio en GitHub
 https://github.com/Segu2807/LaTri.git
+(Asegúrate de tener al menos 1 commit del día de la entrega).
 
-👨‍💻 Autor
-Nombre: Segundo Tipanquiza
+Entrega de archivos
+Enviar el enlace del repositorio y el PDF al correo: dfnoguera@uce.edu.ec (según lo indicado en la rúbrica).
 
-Curso: Dispositivos Moviles
+Autores
+Nombre: Segundo Tipanquiza 
 
-Institución: Universida Central del Ecuador
+Curso: Dispositivos Móviles
+Institución: Universidad Central del Ecuador
+Fecha: 28/07/2026
 
-Fecha: 06/06/2026
-
-📄 Licencia
-Este proyecto fue desarrollado con fines educativos como parte de un ejercicio de aprendizaje en React Native y Expo.
-
-
-Inspiración: Selección Ecuatoriana de Fútbol "La TRI"
-
-
+Licencia
+Este proyecto fue desarrollado con fines educativos como parte de un examen práctico de la materia de Dispositivos Móviles, utilizando React Native y Expo.

@@ -5,7 +5,7 @@ export default function SpainScreen() {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.headerTitle}>🇪🇸 España</Text>
+        <Text style={styles.headerTitle}>España</Text>
       </View>
 
       <View style={styles.flagContainer}>

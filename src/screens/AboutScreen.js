@@ -20,7 +20,7 @@ export default function AboutScreen() {
 
         <View style={styles.info}>
           <Text style={styles.name}>Segundo Tipanquiza</Text>
-          <Text style={styles.role}>Estudiante de Ingenieri en Sistemas</Text>
+          <Text style={styles.role}>Estudiante de Ingenieria en Sistemas</Text>
           <Text style={styles.description}>
             Estudiante apasionado por el desarrollo de aplicaciones móviles y la tecnología.
           </Text>
