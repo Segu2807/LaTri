@@ -1,4 +1,3 @@
-// src/screens/SpainScreen.js
 import React from 'react';
 import { View, Text, Image, StyleSheet, ScrollView } from 'react-native';
 
@@ -9,7 +8,6 @@ export default function SpainScreen() {
         <Text style={styles.headerTitle}>🇪🇸 España</Text>
       </View>
 
-      {/* Bandera */}
       <View style={styles.flagContainer}>
         <Image 
           source={require('../../assets/images/España.png')} 
@@ -18,7 +16,6 @@ export default function SpainScreen() {
         <Text style={styles.countryName}>Seleccion Campeona</Text>
       </View>
 
-      {/* Información */}
       <View style={styles.infoCard}>
         <Text style={styles.sectionTitle}>Himno Nacional</Text>
         <Text style={styles.hymn}>Marcha Real</Text>
@@ -55,14 +52,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#f5f5f5',
   },
   header: {
-    backgroundColor: '#C60B1E', // Rojo español
+    backgroundColor: '#C60B1E',
     paddingVertical: 30,
     alignItems: 'center',
   },
   headerTitle: {
     fontSize: 28,
     fontWeight: 'bold',
-    color: '#FFC400', // Amarillo español
+    color: '#FFC400',
   },
   flagContainer: {
     alignItems: 'center',

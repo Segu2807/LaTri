@@ -1,11 +1,10 @@
-// src/screens/SplashScreen.js
 import React from 'react';
 import { View, Image, Text, StyleSheet, ActivityIndicator } from 'react-native';
 
 export default function SplashScreen() {
   return (
     <View style={styles.container}>
-      {/* Logo (Asegúrate de que la imagen 'España.png' esté en tus assets) */}
+
       <Image
         source={require('../../assets/images/España.png')}
         style={styles.logo}
@@ -14,7 +13,6 @@ export default function SplashScreen() {
       <Text style={styles.title}>Bienvenido</Text>
       <Text style={styles.subtitle}>Torneo de Selecciones 2026</Text>
       
-      {/* Indicador de carga */}
       <ActivityIndicator size="large" color="#FFCC00" style={styles.loader} />
       <Text style={styles.loadingText}>Cargando aplicación...</Text>
     </View>
@@ -24,7 +22,7 @@ export default function SplashScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#003DA5', // Azul oscuro de Ecuador
+    backgroundColor: '#003DA5',
     justifyContent: 'center',
     alignItems: 'center',
   },

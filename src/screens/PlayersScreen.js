@@ -12,7 +12,6 @@ import { playersData } from '../data/playersData';
 import { textStyles } from '../styles/globalStyles';
 
 export default function PlayersScreen({ navigation }) {
-  // Función para renderizar una sección de jugadores
   const renderPlayerSection = (title, players) => (
     <View style={styles.section}>
       <Text style={styles.sectionTitle}>{title}</Text>
@@ -30,7 +29,6 @@ export default function PlayersScreen({ navigation }) {
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* Header con botón de regreso */}
       <View style={styles.header}>
         <TouchableOpacity 
           style={styles.backButton}
@@ -43,19 +41,10 @@ export default function PlayersScreen({ navigation }) {
       </View>
 
       <ScrollView style={styles.scrollView}>
-        {/* Porteros */}
         {renderPlayerSection('🧤 Porteros', playersData.goalkeepers)}
-
-        {/* Defensores */}
         {renderPlayerSection('🛡️ Defensores', playersData.defenders)}
-
-        {/* Mediocampistas */}
         {renderPlayerSection('⚡ Mediocampistas', playersData.midfielders)}
-
-        {/* Delanteros */}
         {renderPlayerSection('⚽ Delanteros', playersData.forwards)}
-
-        {/* Espacio final */}
         <View style={styles.footer} />
       </ScrollView>
     </SafeAreaView>

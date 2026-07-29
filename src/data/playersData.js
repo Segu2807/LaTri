@@ -1,4 +1,3 @@
-// src/data/playersData.js
 
 export const playersData = {
   goalkeepers: [

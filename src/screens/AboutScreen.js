@@ -1,7 +1,6 @@
-// src/screens/AboutScreen.js
 import React from 'react';
 import { View, Text, StyleSheet, ScrollView, Dimensions } from 'react-native';
-import { Video, ResizeMode } from 'expo-av'; // <--- Importa el Video
+import { Video, ResizeMode } from 'expo-av';
 
 export default function AboutScreen() {
   return (
@@ -64,13 +63,12 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 3,
   },
-  // Cambiamos el estilo del avatar por el del video
   video: {
     width: 80, 
     height: 80, 
-    borderRadius: 40, // Esto hace que el video se vea redondo como un perfil
+    borderRadius: 40,
     marginRight: 15,
-    backgroundColor: '#eee', // Color de fondo mientras carga
+    backgroundColor: '#eee',
   },
   info: {
     flex: 1,
